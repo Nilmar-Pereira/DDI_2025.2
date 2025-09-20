@@ -1,0 +1,13 @@
+services:
+  noticias:
+    build: .
+    image: noticias
+    container_name: noticias
+    hostname: noticias
+    ports:
+      - "7001:7001"
+    volumes: 
+      - ./servicos:/servico
+    command: python3 /servico/servico.py
+
+    
