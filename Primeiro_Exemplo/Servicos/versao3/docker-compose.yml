@@ -1,0 +1,23 @@
+services:
+  jogatina:
+    build: .
+    image: jogatina
+    container_name: jogatina
+    hostname: jogatina
+    restart: always
+    ports:
+      - "7001:7001"
+    volumes:
+      - ./servicos/jogatina:/servico
+    command: python3 /servico/servico.py
+  sistemas:
+    build: .
+    image: sistemas
+    container_name: sistemas
+    hostname: sistemas
+    restart: always
+    ports:
+      - "7002:7001"
+    volumes:
+      - ./servicos/sistemas:/servico
+    command: python3 /servico/servico.py    
